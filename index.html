@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running Progress Tracker</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 transform=%22scale(-1,1) translate(-100,0)%22>🏃</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="header-text">
+                    <h1><span class="runner-icon">🏃</span> Running Progress Tracker</h1>
+                    <p class="subtitle">Fredrik's journey from 2km to 21km</p>
+                </div>
+                <div class="header-controls">
+                    <button class="btn btn-primary" onclick="addRun()">✓ Complete a Run</button>
+                    <button class="btn btn-secondary" onclick="resetProgress()">↻ Reset Progress</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Total Runs Required</div>
+                <div class="stat-value" id="totalRuns">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Runs Remaining</div>
+                <div class="stat-value" id="runsRemaining">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Distance Goal</div>
+                <div class="stat-value" id="totalDistanceGoal">0 km</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Distance Remaining</div>
+                <div class="stat-value" id="distanceRemaining">0 km</div>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Current Distance</div>
+                <div class="stat-value" id="currentDistance">14 km</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Runs Completed</div>
+                <div class="stat-value" id="runsCompleted">6 / 14</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Distance Run</div>
+                <div class="stat-value" id="totalDistance">0 km</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Overall Progress</div>
+                <div class="stat-value" id="overallProgress">0%</div>
+            </div>
+        </div>
+
+        <div class="date-section-grid">
+            <div class="date-box">
+                <div class="date-box-label">Project to Date</div>
+                <div class="date-box-content">
+                    <input type="date" id="projectionDate" />
+                    <button class="btn btn-primary btn-small" onclick="resetToToday()">Today</button>
+                </div>
+            </div>
+            <div class="date-box">
+                <div class="date-box-label">Projected Finish</div>
+                <div class="date-box-value" id="projectedFinish">-</div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <h2>Current Level Progress</h2>
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="currentLevelProgress"></div>
+            </div>
+            <div class="progress-info" id="progressInfo"></div>
+        </div>
+
+        <div class="projection-section">
+            <h2>Future Projection</h2>
+            <div class="projection-grid" id="projectionGrid"></div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h2>Progress River</h2>
+                <div id="progressRiver" class="progress-river"></div>
+            </div>
+            <div class="chart-card">
+                <h2>Journey Progress</h2>
+                <div id="journeyWidget" class="journey-widget"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
