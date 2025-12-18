@@ -88,6 +88,34 @@
             <div class="projection-grid" id="projectionGrid"></div>
         </div>
 
+        <div class="mountain-section">
+            <h2>Mountain Progress</h2>
+            <div class="mountain-widget">
+                <div class="mountain-labels">
+                    <span>0%</span>
+                    <span>100%</span>
+                </div>
+                <div class="mountain-visual">
+                    <svg class="mountain-svg" viewBox="0 0 1000 240" preserveAspectRatio="none" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="mountainFill" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#7f8c8d"/>
+                                <stop offset="100%" stop-color="#2c3e50"/>
+                            </linearGradient>
+                        </defs>
+                        <path class="mountain-path" d="M0 210 L40 160 L90 150 L140 120 L190 135 L240 105 L290 90 L340 115 L390 95 L440 125 L490 110 L540 120 L590 95 L640 60 L690 95 L740 120 L790 135 L840 100 L890 125 L940 155 L1000 210 L1000 240 L0 240 Z"></path>
+                        <path class="mountain-ridge" d="M0 210 L40 160 L90 150 L140 120 L190 135 L240 105 L290 90 L340 115 L390 95 L440 125 L490 110 L540 120 L590 95 L640 60 L690 95 L740 120 L790 135 L840 100 L890 125 L940 155 L1000 210"></path>
+                    </svg>
+                    <div class="mountain-marker" id="mountainMarker">
+                        <div class="mountain-marker-label" id="mountainMarkerLabel">0%</div>
+                        <div class="mountain-marker-line"></div>
+                        <div class="mountain-marker-dot"></div>
+                    </div>
+                </div>
+                <div class="mountain-caption" id="mountainCaption">0 km of 0 km completed</div>
+            </div>
+        </div>
+
         <div class="charts-grid">
             <div class="chart-card">
                 <h2>Progress River</h2>

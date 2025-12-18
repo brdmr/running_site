@@ -226,6 +226,7 @@ function updateProjections() {
 function updateCharts() {
     updateProgressRiver();
     updateJourneyWidget();
+    updateMountainWidget();
 }
 
 // Progress river showing journey as horizontal segments
@@ -351,6 +352,31 @@ function updateJourneyWidget() {
 
         widget.appendChild(milestone);
     });
+}
+
+// Mountain progress widget showing overall progress along the silhouette
+function updateMountainWidget() {
+    const marker = document.getElementById('mountainMarker');
+    if (!marker) return;
+
+    const levels = getAllLevels();
+    const totalDistanceGoal = levels.reduce((sum, level) => sum + level.totalDistance, 0);
+    const distanceRun = getTotalDistanceRun();
+    const progress = totalDistanceGoal === 0 ? 0 : (distanceRun / totalDistanceGoal) * 100;
+    const clamped = Math.max(0, Math.min(100, progress));
+    const markerLeft = Math.max(2, Math.min(98, clamped));
+
+    marker.style.left = `${markerLeft}%`;
+
+    const label = document.getElementById('mountainMarkerLabel');
+    if (label) {
+        label.textContent = `${clamped.toFixed(1)}%`;
+    }
+
+    const caption = document.getElementById('mountainCaption');
+    if (caption) {
+        caption.textContent = `${distanceRun} km of ${totalDistanceGoal} km completed`;
+    }
 }
 
 // Add a completed run (manual override - adds one run from projection date)

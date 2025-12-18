@@ -466,6 +466,107 @@ header h1 {
     font-weight: 600;
 }
 
+.mountain-section {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.mountain-section h2 {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.mountain-widget {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mountain-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+    font-weight: 600;
+}
+
+.mountain-visual {
+    position: relative;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #f5f7fa 0%, #e6edf5 100%);
+}
+
+.mountain-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.mountain-path {
+    fill: url(#mountainFill);
+}
+
+.mountain-ridge {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.45);
+    stroke-width: 4;
+}
+
+.mountain-marker {
+    position: absolute;
+    bottom: 18px;
+    left: 0%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    pointer-events: none;
+}
+
+.mountain-marker-label {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #2c3e50;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+.mountain-marker-line {
+    width: 2px;
+    height: 40px;
+    background: rgba(52, 152, 219, 0.6);
+    border-radius: 2px;
+}
+
+.mountain-marker-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    border: 2px solid white;
+    box-shadow: 0 4px 10px rgba(243, 156, 18, 0.4);
+}
+
+.mountain-caption {
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
 .projection-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -686,5 +787,9 @@ header h1 {
 
     .charts-grid {
         grid-template-columns: 1fr;
+    }
+
+    .mountain-visual {
+        height: 170px;
     }
 }
