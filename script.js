@@ -365,8 +365,17 @@ function updateMountainWidget() {
     const progress = totalDistanceGoal === 0 ? 0 : (distanceRun / totalDistanceGoal) * 100;
     const clamped = Math.max(0, Math.min(100, progress));
     const markerLeft = Math.max(2, Math.min(98, clamped));
+    let markerTop = 100;
 
-    marker.style.left = `${markerLeft}%`;
+    const ridgePath = document.getElementById('mountainRidgePath');
+    if (ridgePath && ridgePath.getTotalLength) {
+        const totalLength = ridgePath.getTotalLength();
+        const point = ridgePath.getPointAtLength((clamped / 100) * totalLength);
+        markerTop = Math.max(5, Math.min(98, (point.y / 240) * 100));
+    }
+
+    marker.style.setProperty('--marker-left', `${markerLeft}%`);
+    marker.style.setProperty('--marker-top', `${markerTop}%`);
 
     const label = document.getElementById('mountainMarkerLabel');
     if (label) {

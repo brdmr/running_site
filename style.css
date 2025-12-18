@@ -524,17 +524,19 @@ header h1 {
 
 .mountain-marker {
     position: absolute;
-    bottom: 18px;
-    left: 0%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
+    left: var(--marker-left, 0%);
+    top: var(--marker-top, 100%);
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
     pointer-events: none;
 }
 
 .mountain-marker-label {
+    position: absolute;
+    left: 0;
+    top: -46px;
+    transform: translate(-50%, -100%);
     padding: 4px 10px;
     border-radius: 999px;
     background: white;
@@ -545,13 +547,21 @@ header h1 {
 }
 
 .mountain-marker-line {
+    position: absolute;
+    left: 0;
+    top: -36px;
+    transform: translateX(-50%);
     width: 2px;
-    height: 40px;
+    height: 36px;
     background: rgba(52, 152, 219, 0.6);
     border-radius: 2px;
 }
 
 .mountain-marker-dot {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
     width: 18px;
     height: 18px;
     border-radius: 50%;
