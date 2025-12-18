@@ -141,8 +141,6 @@ function formatDate(date) {
 // Update all statistics displays
 function updateStats() {
     document.getElementById('currentDistance').textContent = `${state.currentDistance} km`;
-    document.getElementById('runsCompleted').textContent =
-        `${state.currentRuns} / ${getRunsNeeded(state.currentDistance)}`;
     document.getElementById('totalDistance').textContent = `${getTotalDistanceRun()} km`;
     document.getElementById('overallProgress').textContent = `${getOverallProgress()}%`;
 
@@ -158,9 +156,10 @@ function updateStats() {
 
     // Update progress info
     const runsLeft = getRunsNeeded(state.currentDistance) - state.currentRuns;
+    const runsNeeded = getRunsNeeded(state.currentDistance);
     document.getElementById('progressInfo').textContent =
         runsLeft > 0
-            ? `${runsLeft} more run${runsLeft !== 1 ? 's' : ''} of ${state.currentDistance}km to level up!`
+            ? `${state.currentRuns} ${state.currentRuns === 1 ? 'run' : 'runs'} in the bag, ${runsLeft} more ${state.currentDistance}km ${runsLeft === 1 ? 'run' : 'runs'} to level up!`
             : 'Level complete! Click "Complete a Run" to move to the next level.';
 
     // Update summary stats
@@ -174,6 +173,7 @@ function updateStats() {
     document.getElementById('totalDistanceGoal').textContent = `${totalDistanceGoal} km`;
     document.getElementById('runsRemaining').textContent = totalRuns - runsCompleted;
     document.getElementById('distanceRemaining').textContent = `${totalDistanceGoal - distanceRun} km`;
+    document.getElementById('totalRunsCompleted').textContent = runsCompleted;
 
     // Update projection grid
     updateProjections();
