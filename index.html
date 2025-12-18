@@ -91,10 +91,6 @@
         <div class="mountain-section">
             <h2>Mountain Progress</h2>
             <div class="mountain-widget">
-                <div class="mountain-labels">
-                    <span>0%</span>
-                    <span>100%</span>
-                </div>
                 <div class="mountain-visual">
                     <svg class="mountain-svg" viewBox="0 0 1000 240" preserveAspectRatio="none" aria-hidden="true">
                         <defs>
@@ -103,13 +99,18 @@
                                 <stop offset="100%" stop-color="#2c3e50"/>
                             </linearGradient>
                         </defs>
-                        <path class="mountain-path" d="M0 210 C20 175 40 160 70 155 C95 150 115 130 140 120 C170 112 190 135 215 125 C235 115 255 100 280 92 C310 84 330 115 355 112 C380 108 400 90 430 110 C460 130 480 105 505 110 C530 115 555 130 585 112 C610 95 625 70 650 65 C675 60 690 92 715 105 C740 118 760 135 785 132 C810 128 825 100 850 102 C875 104 890 125 915 140 C945 160 970 185 1000 210 L1000 240 L0 240 Z"></path>
-                        <path class="mountain-ridge" id="mountainRidgePath" d="M0 210 C20 175 40 160 70 155 C95 150 115 130 140 120 C170 112 190 135 215 125 C235 115 255 100 280 92 C310 84 330 115 355 112 C380 108 400 90 430 110 C460 130 480 105 505 110 C530 115 555 130 585 112 C610 95 625 70 650 65 C675 60 690 92 715 105 C740 118 760 135 785 132 C810 128 825 100 850 102 C875 104 890 125 915 140 C945 160 970 185 1000 210"></path>
+                        <path class="mountain-path" d="M0 228 C20 193 40 178 70 173 C95 168 115 148 140 138 C170 130 190 153 215 143 C235 133 255 118 280 110 C310 102 330 133 355 130 C380 126 400 108 430 128 C460 148 480 123 505 128 C530 133 555 148 585 130 C610 113 625 88 650 83 C675 78 700 76 725 70 C750 64 770 58 795 62 C820 66 840 54 865 48 C890 42 910 50 930 58 C950 66 965 56 980 64 C990 70 995 74 1000 76 L1000 240 L0 240 Z"></path>
+                        <path class="mountain-ridge" id="mountainRidgePath" d="M0 228 C20 193 40 178 70 173 C95 168 115 148 140 138 C170 130 190 153 215 143 C235 133 255 118 280 110 C310 102 330 133 355 130 C380 126 400 108 430 128 C460 148 480 123 505 128 C530 133 555 148 585 130 C610 113 625 88 650 83 C675 78 700 76 725 70 C750 64 770 58 795 62 C820 66 840 54 865 48 C890 42 910 50 930 58 C950 66 965 56 980 64 C990 70 995 74 1000 76"></path>
                     </svg>
                     <div class="mountain-marker" id="mountainMarker">
                         <div class="mountain-marker-label" id="mountainMarkerLabel">0%</div>
                         <div class="mountain-marker-line"></div>
                         <div class="mountain-marker-dot"></div>
+                    </div>
+                    <div class="mountain-flag" id="mountainFlag">
+                        <div class="mountain-flag-label" id="mountainFlagLabel">0 km</div>
+                        <div class="mountain-flag-pole"></div>
+                        <div class="mountain-flag-icon"></div>
                     </div>
                 </div>
                 <div class="mountain-caption" id="mountainCaption">0 km of 0 km completed</div>

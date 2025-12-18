@@ -386,6 +386,30 @@ function updateMountainWidget() {
     if (caption) {
         caption.textContent = `${distanceRun} km of ${totalDistanceGoal} km completed`;
     }
+
+    const flag = document.getElementById('mountainFlag');
+    if (flag && ridgePath && ridgePath.getTotalLength) {
+        const totalLength = ridgePath.getTotalLength();
+        let peakPoint = ridgePath.getPointAtLength(0);
+        const samples = 200;
+
+        for (let i = 1; i <= samples; i++) {
+            const point = ridgePath.getPointAtLength((i / samples) * totalLength);
+            if (point.y < peakPoint.y) {
+                peakPoint = point;
+            }
+        }
+
+        const flagLeft = Math.max(2, Math.min(98, (peakPoint.x / 1000) * 100));
+        const flagTop = Math.max(2, Math.min(98, (peakPoint.y / 240) * 100));
+        flag.style.setProperty('--flag-left', `${flagLeft}%`);
+        flag.style.setProperty('--flag-top', `${flagTop}%`);
+    }
+
+    const flagLabel = document.getElementById('mountainFlagLabel');
+    if (flagLabel) {
+        flagLabel.textContent = `${totalDistanceGoal} km`;
+    }
 }
 
 // Add a completed run (manual override - adds one run from projection date)

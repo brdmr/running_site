@@ -490,17 +490,9 @@ header h1 {
     gap: 16px;
 }
 
-.mountain-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: #7f8c8d;
-    font-weight: 600;
-}
-
 .mountain-visual {
     position: relative;
-    height: 200px;
+    height: 230px;
     border-radius: 16px;
     overflow: hidden;
     background: linear-gradient(180deg, #f5f7fa 0%, #e6edf5 100%);
@@ -568,6 +560,53 @@ header h1 {
     background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
     border: 2px solid white;
     box-shadow: 0 4px 10px rgba(243, 156, 18, 0.4);
+}
+
+.mountain-flag {
+    position: absolute;
+    left: var(--flag-left, 100%);
+    top: var(--flag-top, 0%);
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.mountain-flag-label {
+    position: absolute;
+    left: 26px;
+    top: -22px;
+    transform: translate(0, -50%);
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #2c3e50;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+.mountain-flag-pole {
+    position: absolute;
+    left: 0;
+    top: -28px;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 28px;
+    background: rgba(44, 62, 80, 0.6);
+    border-radius: 2px;
+}
+
+.mountain-flag-icon {
+    position: absolute;
+    left: 2px;
+    top: -28px;
+    width: 18px;
+    height: 12px;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    clip-path: polygon(0 0, 100% 12%, 70% 50%, 100% 88%, 0 100%);
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(52, 152, 219, 0.4);
 }
 
 .mountain-caption {
