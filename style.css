@@ -495,7 +495,7 @@ header h1 {
     height: 230px;
     border-radius: 16px;
     overflow: hidden;
-    background: linear-gradient(180deg, #f5f7fa 0%, #e6edf5 100%);
+    background: linear-gradient(180deg, #f3f7fb 0%, #e4eef8 100%);
 }
 
 .mountain-svg {
@@ -510,7 +510,7 @@ header h1 {
 
 .mountain-ridge {
     fill: none;
-    stroke: rgba(255, 255, 255, 0.45);
+    stroke: rgba(236, 245, 255, 0.6);
     stroke-width: 4;
 }
 
@@ -527,7 +527,7 @@ header h1 {
 .mountain-marker-label {
     position: absolute;
     left: 0;
-    top: -46px;
+    top: -22px;
     transform: translate(-50%, -100%);
     padding: 4px 10px;
     border-radius: 999px;
@@ -539,14 +539,7 @@ header h1 {
 }
 
 .mountain-marker-line {
-    position: absolute;
-    left: 0;
-    top: -36px;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 36px;
-    background: rgba(52, 152, 219, 0.6);
-    border-radius: 2px;
+    display: none;
 }
 
 .mountain-marker-dot {
@@ -593,7 +586,7 @@ header h1 {
     transform: translateX(-50%);
     width: 2px;
     height: 28px;
-    background: rgba(44, 62, 80, 0.6);
+    background: rgba(44, 62, 80, 0.55);
     border-radius: 2px;
 }
 
